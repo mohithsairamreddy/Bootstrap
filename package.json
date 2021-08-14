@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/mohithsairamreddy/git-test/issues"
   },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
   "homepage": "https://github.com/mohithsairamreddy/git-test#readme",
   "dependencies": {
     "bootstrap": "^4.0.0",
