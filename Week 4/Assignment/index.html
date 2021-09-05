@@ -29,9 +29,8 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
+                <span  id="login-button" class="navbar-text">
+                   <a><span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
         </div>
@@ -43,7 +42,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="dismiss-modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -65,7 +64,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button id="dismiss-modal-button" type="button" class="btn btn-secondary btn-sm ml-auto">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -85,10 +84,8 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <div class="btn-group" role="button">
-                        <a role="button" class="btn btn-block nav-link btn-warning"
-                         data-html="true"  title="Or Call us at  <br><strong>9390706893</strong>"
-                        data-placement="bottom" data-toggle="modal" data-target="#reservemodal">Reserve Table</a>
+                    <div  class="btn-group" role="button">
+                        <a role="button" class="btn btn-block nav-link btn-warning" id="reserve-button" >Reserve Table</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +98,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 classs="modal-title">Reserve Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="dismiss-modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form>
@@ -162,7 +159,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="offset-md-2 col-md-10">
-                                    <button type="button" data-dismiss="modal" class="btn btn-lg btn-secondary">Cancel</button>
+                                    <button type="button" id="dismiss-modal-button" class="btn btn-lg btn-secondary">Cancel</button>
                                     <button type="submit" class="btn btn-lg btn-primary">Reserve</button>
                                 </div>
                             </div>
@@ -327,8 +324,20 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+
+            $("#login-button").click(function(){
+               $("#loginModal").modal("show");
+            });
+
+            $("#reserve-button").click(function(){
+                $("#reservemodal").modal("show");
+            });
+
+            $("#dismiss-modal,#dismiss-modal-button").click(function(){
+                $("#loginModal").modal("hide");
+                $("#reservemodal").modal("hide");
+            });
         });
     </script>
 </body>
-
 </html>
