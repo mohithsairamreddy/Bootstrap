@@ -12,6 +12,7 @@ $(document).ready(function(){
             $("#carouselButton").children("span").addClass('fa-pause');                    
         }
     });
+    
 
     $("#login-button").click(function(){
        $("#loginModal").modal("show");
